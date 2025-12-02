@@ -42,7 +42,7 @@ body {
     color: #ecdb35;
     font-family: 'Squada One', cursive;
     text-transform: uppercase;
-    font-size: clamp(48px, 12vw, 72px);
+    font-size: clamp(32px, 8vw, 60px);
     text-shadow: 0 3px red;
     margin: 0 auto clamp(1rem, 3vw, 2rem);
     transform: scale(0);
@@ -50,7 +50,7 @@ body {
     animation-delay: 2s;
     line-height: 1.1;
     will-change: transform;
-    max-width: 95%;
+    max-width: 90%;
 }
 
 #hero h1 span {
@@ -197,7 +197,12 @@ footer {
         flex: 1 1 22%;
     }
 }
-
+@media (max-width: 400px) {
+    #hero h1 {
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+}
 /* ==================== ANIMACIONES ==================== */
 @keyframes fadeUp {
     0% { opacity: 0; transform: translateY(40px); }
