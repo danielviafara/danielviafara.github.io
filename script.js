@@ -31,9 +31,11 @@ function fisheye(el) {
 
     el.querySelectorAll("span").forEach((c, i) => {
         const isMobile = window.innerWidth < 768;
-        const skew = map(i, 0, numberOfChars - 1, isMobile ? -8 : -15, isMobile ? 8 : 15);
-        const scale = map2(i, 0, numberOfChars - 1, 1, isMobile ? 2 : 3, i / numberOfChars);
-        const letterSpace = map2(i, 0, numberOfChars - 1, isMobile ? 2 : 5, isMobile ? 10 : 20, i / numberOfChars);
+
+        // 🔽 efecto MUCHO más suave en móvil
+        const skew = map(i, 0, numberOfChars - 1, isMobile ? -5 : -15, isMobile ? 5 : 15);
+        const scale = map2(i, 0, numberOfChars - 1, 1, isMobile ? 1.3 : 3, i / numberOfChars);
+        const letterSpace = map2(i, 0, numberOfChars - 1, isMobile ? 1 : 5, isMobile ? 6 : 20, i / numberOfChars);
 
         c.style.transform = `skew(${skew}deg) scale(1, ${scale})`;
         c.style.letterSpacing = `${letterSpace}px`;
